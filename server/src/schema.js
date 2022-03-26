@@ -30,6 +30,17 @@ const typeDefs = gql`
     "The Module's length in minutes"
     length: Int
   }
+
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
+
+  type IncrementTrackViewsResponse {
+    code: Int!
+    success: Boolean!
+    message: String!
+    track: Track
+  }
 `
 
 module.exports = typeDefs
